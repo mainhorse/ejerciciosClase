@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> abcedario </title>
+		<style>
+			.conCard{
+				
+                width: 1500px;
+				margin-top: 10px;
+				margin-left: 200px;
+				border: 2px solid #AEF234;
+				float: left;
+			}
+			
+		</style>
+		<meta charset ="UTF-8">
+		<mta name="viewport" content="width=device-width, initial-scale = 1.0">
+	</head>
+	<body>
+    	<div id="conCard">
+    	
+    	</div> 
+
+		<script>
+           
+			var abc = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+			var datos =[""];
+			var cont = 0;
+
+			do{
+				 let dato = prompt(`ingrese una palabara comenzada con : ${abc[cont]} `);
+			
+				if(dato.charAt(0) == abc[cont]){
+                   datos[cont] = dato ; 
+				   cont++;
+				   cards = "card" + cont; 
+				   var cards = {
+            	                posicion : cont,
+            	                nombre : dato,
+                               }
+
+                   let contenedor = "contenedor" + cont;
+                   let id = "id" + cont;
+                   let numHexa = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
+				   var conNumero = "#"
+
+				   for(i = 0 ; i<6 ; i++){
+				       let random = parseInt(Math.random()*(15 - 0) + 0);
+                       conNumero += numHexa[random];
+				      }
+
+                   col = conNumero;                  
+
+                   contenedor = document.createElement("div");
+                   let contenido = document.createTextNode(`posicion: ${cards.posicion} <br> nombre : ${cards.nombre}`);
+                   contenedor.appendChild(contenido);
+                   document.getElementById("conCard").appendChild(contenedor);
+                   contenedor.setAttribute("id",id);
+                   
+                   document.getElementById(id).style.backgroundColor = col;
+                   document.getElementById(id).style.width = "150px";
+                   document.getElementById(id).style.height = "50px";
+                   document.getElementById(id).style.color = "white";
+                   document.getElementById(id).style.textAlign = "center";
+                   document.getElementById(id).style.marginTop = "10px";
+                   document.getElementById(id).style.marginLeft = "10px";
+                   document.getElementById(id).style.borderRadius = "10px";
+                   document.getElementById(id).style.border = "2px solid '" + col +"'";
+                   document.getElementById(id).style.float = "left";
+				} 
+
+			} while(cont < 26);
+		</script>
+	</body>
+</html>
