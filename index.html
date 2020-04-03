@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> atributo JSON </title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale= 1.0">
+		<link href="css/estilos.css" rel="stylesheet">
+	</head>
+	<body>
+	    <div id="container">
+	    	<nav>
+	    	    <div id="banner">
+	    	    	baner
+	    	    </div>	
+	    	    <div id="logo">
+	    	    	logo
+	    	    </div>	
+	    	</nav>
+	    	<main>
+	    		<aside id= "izquierdo">
+	    			<label class="etiquetas">Nombre empleado </label>
+	    			<label class="etiquetas">Apellido empleado </label>
+	    			<label class="etiquetas">cedula empleado </label>
+	    			<label class="etiquetas">cargo empleado </label>
+	    			<label class="etiquetas">antiguedad empleado </label>
+	    			<label class="etiquetas">salario empleado </label>
+	    			<label class="etiquetas">Horas extras</label>
+	    		</aside>
+	    		<aside id="centro">
+	    			<input id="nombre" class="valores" type="text" name="nombre">
+	    			<input id="apellido" class="valores" type="text" name="apellido">
+	    			<input id="cedula" class="valores" type="text" name="cedula">
+	    			<input id="cargo" class="valores" type="text" name="cargo">
+	    			<input id="antiguedad" class="valores" type="text" name="antiguedad">
+	    			<input id="salario" class="valores" type="text" name="salario">
+	    			<input id="extras" class="valores" type="text" name="Extras">
+	    		</aside>
+	    		<aside id="derecho">
+	    			<div id="botNombre" class="botones">
+	    				<button onclick="agregar();">agregar</button>
+	    			</div>	
+	    			<div id="botApellido" class="botones">
+	    				<button onclick="modificar('apellido');">modificar</button>
+	    			</div>	
+	    			<div id="botCedula" class="botones">
+	    				<button onclick="modificar('cedula');">modificar</button>
+	    			</div>	
+	    			<div id="botCargo" class="botones">
+	    				<button onclick="modificar('cargo');">modificar</button>
+	    			</div>	
+	    			<div id="botAntiguedad" class="botones">
+	    				<button onclick="modificar('antiguedad');">modificar</button>
+	    			</div>	
+	    			<div id="botSalario" class="botones">
+	    				<button onclick="modificar('salario');">modificar</button>
+	    			</div>	
+	    			<div id="botExtras" class="botones">
+	    				<button onclick="modificar('extras');">modificar</button>
+	    			</div>	
+	    		</aside>
+	    	</main> 
+	    	<div id="salEmp">
+	    		
+	    	</div>   
+	    </div>	
+	<script type="text/javascript" src="js/javaScript.js"></script>    
+	</body>
+<html>

@@ -3,12 +3,11 @@
 	<head>
 		<title> abcedario </title>
 		<style>
-			.conCard{
-				
+			#conCard{				
                 width: 1500px;
+                height: 200px;
 				margin-top: 10px;
-				margin-left: 200px;
-				border: 2px solid #AEF234;
+				border: 4px solid #AEF234;
 				float: left;
 			}
 			
@@ -29,35 +28,43 @@
 
 			do{
 				 let dato = prompt(`ingrese una palabara comenzada con : ${abc[cont]} `);
+				 dato = dato.toLowerCase();
 			
 				if(dato.charAt(0) == abc[cont]){
                    datos[cont] = dato ; 
 				   cont++;
-				   cards = "card" + cont; 
-				   var cards = {
+
+				   var card = {
             	                posicion : cont,
             	                nombre : dato,
                                }
 
-                   let contenedor = "contenedor" + cont;
+                  
                    let id = "id" + cont;
                    let numHexa = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
-				   var conNumero = "#"
+				   var conNumero = "#";
+				   var conBorde = "#";
 
 				   for(i = 0 ; i<6 ; i++){
 				       let random = parseInt(Math.random()*(15 - 0) + 0);
-                       conNumero += numHexa[random];
+                       conNumero += numHexa[random]; //concatena numero hexa
 				      }
 
-                   col = conNumero;                  
+				   for(j = 0 ; j<6 ; j++){
+				       let random = parseInt(Math.random()*(15 - 0) + 0);
+                       conBorde += numHexa[random]; //concatena
+				      }    
+                  
+                   col = "2px solid " + conBorde;                  
 
-                   contenedor = document.createElement("div");
-                   let contenido = document.createTextNode(`posicion: ${cards.posicion} <br> nombre : ${cards.nombre}`);
+                   contenedor = document.createElement("div");                   
+                   let contenido = document.createTextNode(`posicion: ${card.posicion} <br> nombre : ${card.nombre}`);
                    contenedor.appendChild(contenido);
                    document.getElementById("conCard").appendChild(contenedor);
                    contenedor.setAttribute("id",id);
+                   //console.log(contenido)
                    
-                   document.getElementById(id).style.backgroundColor = col;
+                   document.getElementById(id).style.backgroundColor = conNumero;
                    document.getElementById(id).style.width = "150px";
                    document.getElementById(id).style.height = "50px";
                    document.getElementById(id).style.color = "white";
@@ -65,7 +72,7 @@
                    document.getElementById(id).style.marginTop = "10px";
                    document.getElementById(id).style.marginLeft = "10px";
                    document.getElementById(id).style.borderRadius = "10px";
-                   document.getElementById(id).style.border = "2px solid '" + col +"'";
+                   document.getElementById(id).style.border = col;
                    document.getElementById(id).style.float = "left";
 				} 
 
